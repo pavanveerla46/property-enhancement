@@ -1,0 +1,175 @@
+/* Make the entire site use full screen width */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: #f8fafc;
+  font-family: "Segoe UI", sans-serif;
+  color: #1c2234;         /* <- default (dark) text color for the whole site */
+}
+
+/* Reusable full width container */
+.full-width {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* General Page */
+.page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #fff;            /* header text stays white (good on purple) */
+  text-align: center;
+  padding: 3rem 1rem;
+  position: relative;
+}
+
+.admin-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background-color: #fff;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.admin-button:hover {
+  background-color: #eee;
+}
+
+/* Sections */
+.hero, .form-section, .trust-section {
+  width: 90%;
+  max-width: 1000px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 0.5rem;
+  background-color: #fff;
+  color: #000;
+}
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  border: 1px solid #6f48eb; /* Purple highlight when active */
+  background-color: #fff;
+}
+
+.submit-btn {
+  background-color: #2575fc;
+  color: white;
+  padding: 0.8rem 2rem;
+  margin-top: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #1e5edc;
+}
+
+/* Confirmation + Thank You */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.confirmation-box {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.thankyou-page {
+  background: linear-gradient(180deg, #2575fc, #6a11cb);
+  color: #fff;            /* keep white text here (good on gradient) */
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+
+.thankyou-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.thankyou-sub {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.thankyou-info {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 1.5rem;
+}
+/* Force black text on white background */
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 0.5rem;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Highlight when the user clicks the box */
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  border: 1px solid #6f48eb !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
