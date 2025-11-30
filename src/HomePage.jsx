@@ -106,13 +106,13 @@ function HomePage() {
       )}
 
       <header className="header">
-        <Link className="admin-button" to="/admin">
-          Admin Login
-        </Link>
-
-        {/* Only show these when user is NOT logged in */}
+        {/* 🔐 Only show Admin / Register / Login when NO user is logged in */}
         {!currentUser && (
           <>
+            <Link className="admin-button" to="/admin">
+              Admin Login
+            </Link>
+
             <Link className="user-button" to="/register">
               User Register
             </Link>
