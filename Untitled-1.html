@@ -1,0 +1,30 @@
+<html>
+<body>
+
+<div id="step1">
+  Name: <input id="name"><br><br>
+  Email: <input id="email"><br><br>
+  <button onclick="next()">Next</button>
+</div>
+
+<div id="step2" style="display:none;">
+  Name: <span id="sName"></span><br>
+  Email: <span id="sEmail"></span><br><br>
+  <button onclick="back()">Back</button>
+</div>
+
+<script>
+function next(){
+  sName.innerHTML = name.value;
+  sEmail.innerHTML = email.value;
+  step1.style.display="none";
+  step2.style.display="block";
+}
+function back(){
+  step1.style.display="block";
+  step2.style.display="none";
+}
+</script>
+
+</body>
+</html>

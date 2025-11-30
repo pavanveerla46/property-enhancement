@@ -1,24 +1,19 @@
 // src/ConfirmationPage.jsx
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function ConfirmationPage() {
-  const { state } = useLocation();
-  const navigate = useNavigate();
-  const data = state?.data || null;
-
-  const handleSave = () => {
-    // (optional) save to localStorage here...
-    navigate("/thankyou");
-  };
-
   return (
-    <div className="container center">
-      <div className="confirmation-box">
-        <h2>Confirm Your Submission</h2>
-        <p>Are you sure you want to save your details?</p>
-        <button onClick={handleSave} className="submit-btn">Save</button>
-      </div>
+    <div className="page" style={{ padding: "40px 20px", textAlign: "center" }}>
+      <h2>Thank you for submitting your details!</h2>
+      <p>
+        Our team will review your requirements and get back to you with
+        personalized recommendations soon.
+      </p>
+
+      <Link to="/" style={{ marginTop: 20, display: "inline-block" }}>
+        <button className="submit-btn">Back to Home</button>
+      </Link>
     </div>
   );
 }

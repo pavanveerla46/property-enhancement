@@ -1,21 +1,19 @@
-/* Make the entire site use full screen width */
 html, body, #root {
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100%;
-  background-color: #f8fafc;
+  background-color: #ffffff;
   font-family: "Segoe UI", sans-serif;
-  color: #1c2234;         /* <- default (dark) text color for the whole site */
+  color: #1a1218;         
 }
 
-/* Reusable full width container */
 .full-width {
   width: 100%;
   box-sizing: border-box;
 }
 
-/* General Page */
+
 .page {
   width: 100%;
   min-height: 100vh;
@@ -24,11 +22,11 @@ html, body, #root {
   align-items: center;
 }
 
-/* Header */
+
 .header {
   width: 100%;
-  background: linear-gradient(90deg, #6a11cb, #2575fc);
-  color: #fff;            /* header text stays white (good on purple) */
+  background: linear-gradient(90deg, #8000f8, #120be8);
+  color: #ffffff;          
   text-align: center;
   padding: 3rem 1rem;
   position: relative;
@@ -39,7 +37,7 @@ html, body, #root {
   top: 1.5rem;
   right: 2rem;
   background-color: #fff;
-  color: #333;
+  color: #1c1515;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   font-weight: bold;
@@ -50,7 +48,7 @@ html, body, #root {
   background-color: #eee;
 }
 
-/* Sections */
+
 .hero, .form-section, .trust-section {
   width: 90%;
   max-width: 1000px;
@@ -81,7 +79,7 @@ html, body, #root {
 .form input:focus,
 .form select:focus,
 .form textarea:focus {
-  border: 1px solid #6f48eb; /* Purple highlight when active */
+  border: 1px solid #6f48eb; 
   background-color: #fff;
 }
 
@@ -100,7 +98,7 @@ html, body, #root {
   background-color: #1e5edc;
 }
 
-/* Confirmation + Thank You */
+
 .center {
   display: flex;
   justify-content: center;
@@ -118,7 +116,7 @@ html, body, #root {
 
 .thankyou-page {
   background: linear-gradient(180deg, #2575fc, #6a11cb);
-  color: #fff;            /* keep white text here (good on gradient) */
+  color: #fff;          
   text-align: center;
   height: 100vh;
   display: flex;
@@ -145,14 +143,14 @@ html, body, #root {
   margin: 0 auto;
 }
 
-/* Footer */
+
 .footer {
   width: 100%;
   text-align: center;
   background-color: #f0f0f0;
   padding: 1.5rem;
 }
-/* Force black text on white background */
+
 .form input,
 .form select,
 .form textarea {
@@ -165,7 +163,6 @@ html, body, #root {
   color: #000000 !important;
 }
 
-/* Highlight when the user clicks the box */
 .form input:focus,
 .form select:focus,
 .form textarea:focus {

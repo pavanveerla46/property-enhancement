@@ -5,38 +5,76 @@ import { useNavigate } from "react-router-dom";
 function AdminLogin() {
   const navigate = useNavigate();
 
+  // 👉 Put all your team usernames here (lowercase is easier)
+  const allowedAdmins = ["pavan", "himesh", "vinay"];
+
   const handleLogin = (e) => {
     e.preventDefault();
+
     const fd = new FormData(e.target);
-    const user = fd.get("admin-user");
-    const pass = fd.get("admin-pass");
+    const username = fd.get("username").trim().toLowerCase();
+    const password = fd.get("password");
 
-    // Simple placeholder check (replace with real auth later)
-    if (!user || !pass) {
-      alert("Please enter username and password");
-      return;
+    const isAllowedUser = allowedAdmins.includes(username);
+    const isCorrectPassword = password === "123456"; // same for everyone
+
+    if (isAllowedUser && isCorrectPassword) {
+      alert("Login Successful!");
+
+      // (optional) remember who logged in
+      localStorage.setItem("adminLoggedIn", "true");
+      localStorage.setItem("adminName", username);
+
+      // go to admin dashboard page
+      navigate("/admin-dashboard");
+    } else {
+      alert("Wrong username or password!");
     }
-
-    // simulate success then navigate back to home
-    alert("Admin login successful (demo)");
-    navigate("/");
   };
 
   return (
-    <div className="container" style={{ maxWidth: 560 }}>
+    <div className="page" style={{ padding: "40px 20px", textAlign: "center" }}>
       <h2>Admin Login</h2>
-      <form onSubmit={handleLogin}>
-        <label htmlFor="admin-user">Username <span className="highlight">*</span></label>
-        <input id="admin-user" name="admin-user" type="text" required />
+      <form
+        onSubmit={handleLogin}
+        style={{
+          maxWidth: 400,
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          gap: "10px",
+        }}
+      >
+        <label>Username</label>
+        <input
+          name="username"
+          type="text"
+          placeholder="Enter username"
+          required
+        />
 
-        <label htmlFor="admin-pass">Password <span className="highlight">*</span></label>
-        <input id="admin-pass" name="admin-pass" type="password" required />
+        <label>Password</label>
+        <input
+          name="password"
+          type="password"
+          placeholder="Enter password"
+          required
+        />
 
-        <button type="submit">Login</button>
+        <button
+          type="submit"
+          style={{
+            padding: "10px",
+            backgroundColor: "#007bff",
+            color: "#fff",
+            border: "none",
+            cursor: "pointer",
+            marginTop: "10px",
+          }}
+        >
+          Login
+        </button>
       </form>
-      <small style={{ display: "block", marginTop: 12 }}>
-        Admins: Curate and update suggestions and manage submissions.
-      </small>
     </div>
   );
 }
